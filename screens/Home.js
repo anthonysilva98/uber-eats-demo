@@ -6,7 +6,7 @@ import Catagories from "../components/Catagories";
 import RestaurantItem from "../components/RestaurantItem";
 const Home = () => {
   return (
-    <SafeAreaView style={{ backgroundColor: "grey", flex: 1 }}>
+    <SafeAreaView style={{ backgroundColor: "#eee", flex: 1 }}>
       <View style={{ backgroundColor: "white", padding: 15 }}>
         <HeaderTabs />
         <SearchBar />
