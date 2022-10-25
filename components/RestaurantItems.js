@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-const RestaurantItem = () => {
+const RestaurantItems = () => {
   const localRestaurants = [
     {
       name: "Best Restaurant",
@@ -53,7 +53,7 @@ const RestaurantItem = () => {
   );
 };
 
-export default RestaurantItem;
+export default RestaurantItems;
 
 const RestaurantImage = ({ image }) => {
   return (

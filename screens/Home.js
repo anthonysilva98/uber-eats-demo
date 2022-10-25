@@ -3,7 +3,7 @@ import React from "react";
 import HeaderTabs from "../components/HeaderTabs";
 import SearchBar from "../components/SearchBar";
 import Catagories from "../components/Catagories";
-import RestaurantItem from "../components/RestaurantItem";
+import RestaurantItems from "../components/RestaurantItems";
 const Home = () => {
   return (
     <SafeAreaView style={{ backgroundColor: "#eee", flex: 1 }}>
@@ -13,7 +13,7 @@ const Home = () => {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Catagories />
-        <RestaurantItem />
+        <RestaurantItems />
       </ScrollView>
     </SafeAreaView>
   );
