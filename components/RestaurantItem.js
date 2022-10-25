@@ -2,34 +2,66 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 const RestaurantItem = () => {
+  const localRestaurants = [
+    {
+      name: "Best Restaurant",
+      image_url:
+        "https://popmenucloud.com/byzevpwi/a4805191-43af-4d57-b9c7-7e2099ce5370.jpg",
+      catagories: ["Cafe", "Bar"],
+      price: "$$",
+      reviews: 1222,
+      rating: 5.0,
+    },
+    {
+      name: "My Restaurant",
+      image_url:
+        "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg",
+      catagories: ["Diner", "Bar"],
+      price: "$",
+      reviews: 122,
+      rating: 4.0,
+    },
+    {
+      name: "The Restaurant",
+      image_url:
+        "https://media.istockphoto.com/photos/modern-restaurant-interior-design-picture-id1211547141?k=20&m=1211547141&s=612x612&w=0&h=KiZX3NBZVCK4MlSh4BJ8hZNSJcTIMbNSSV2yusw2NmM=",
+      catagories: ["Bar"],
+      price: "$$$",
+      reviews: 1212,
+      rating: 3.0,
+    },
+  ];
   return (
     <TouchableOpacity activeOpacity={1} style={{ marginBottom: 30 }}>
-      <View
-        style={{
-          paddingHorizontal: 10,
-          backgroundColor: "white",
-          padding: 15,
-          marginTop: 10,
-        }}
-      >
-        {/* Restaurant Image */}
-        <RestaurantImage />
-        {/* Restaurant Info */}
-        <RestaurantInfo />
-      </View>
+      {localRestaurants.map((restaurant, index) => (
+        <View
+          key={index}
+          style={{
+            paddingHorizontal: 10,
+            backgroundColor: "white",
+            padding: 15,
+            marginTop: 10,
+          }}
+        >
+          {/* Restaurant Image */}
+          <RestaurantImage image={restaurant.image_url} />
+          {/* Restaurant Info */}
+          <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
+        </View>
+      ))}
     </TouchableOpacity>
   );
 };
 
 export default RestaurantItem;
 
-const RestaurantImage = () => {
+const RestaurantImage = ({ image }) => {
   return (
     <>
       <Image
         style={{ width: "100%", height: 180 }}
         source={{
-          uri: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&w=1000&q=80",
+          uri: image,
         }}
       />
       <TouchableOpacity style={{ position: "absolute", top: 20, right: 20 }}>
@@ -39,7 +71,7 @@ const RestaurantImage = () => {
   );
 };
 
-const RestaurantInfo = () => {
+const RestaurantInfo = ({ name, rating }) => {
   return (
     <View
       style={{
@@ -50,9 +82,7 @@ const RestaurantInfo = () => {
       }}
     >
       <View>
-        <Text style={{ fontSize: 15, fontWeight: "bold" }}>
-          FarmHouse Kitchen Thai Cuisine
-        </Text>
+        <Text style={{ fontSize: 15, fontWeight: "bold" }}>{name}</Text>
         <Text style={{ color: "grey" }}>30-45 ` min</Text>
       </View>
       <View
@@ -65,7 +95,7 @@ const RestaurantInfo = () => {
           borderRadius: 15,
         }}
       >
-        <Text>4.5</Text>
+        <Text>{rating}</Text>
       </View>
     </View>
   );
