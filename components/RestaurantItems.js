@@ -1,39 +1,39 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-const RestaurantItems = () => {
-  const localRestaurants = [
-    {
-      name: "Best Restaurant",
-      image_url:
-        "https://popmenucloud.com/byzevpwi/a4805191-43af-4d57-b9c7-7e2099ce5370.jpg",
-      catagories: ["Cafe", "Bar"],
-      price: "$$",
-      reviews: 1222,
-      rating: 5.0,
-    },
-    {
-      name: "My Restaurant",
-      image_url:
-        "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg",
-      catagories: ["Diner", "Bar"],
-      price: "$",
-      reviews: 122,
-      rating: 4.0,
-    },
-    {
-      name: "The Restaurant",
-      image_url:
-        "https://media.istockphoto.com/photos/modern-restaurant-interior-design-picture-id1211547141?k=20&m=1211547141&s=612x612&w=0&h=KiZX3NBZVCK4MlSh4BJ8hZNSJcTIMbNSSV2yusw2NmM=",
-      catagories: ["Bar"],
-      price: "$$$",
-      reviews: 1212,
-      rating: 3.0,
-    },
-  ];
+export const localRestaurants = [
+  {
+    name: "Best Restaurant",
+    image_url:
+      "https://popmenucloud.com/byzevpwi/a4805191-43af-4d57-b9c7-7e2099ce5370.jpg",
+    catagories: ["Cafe", "Bar"],
+    price: "$$",
+    reviews: 1222,
+    rating: 5.0,
+  },
+  {
+    name: "My Restaurant",
+    image_url:
+      "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg",
+    catagories: ["Diner", "Bar"],
+    price: "$",
+    reviews: 122,
+    rating: 4.0,
+  },
+  {
+    name: "The Restaurant",
+    image_url:
+      "https://media.istockphoto.com/photos/modern-restaurant-interior-design-picture-id1211547141?k=20&m=1211547141&s=612x612&w=0&h=KiZX3NBZVCK4MlSh4BJ8hZNSJcTIMbNSSV2yusw2NmM=",
+    catagories: ["Bar"],
+    price: "$$$",
+    reviews: 1212,
+    rating: 3.0,
+  },
+];
+const RestaurantItems = (props) => {
   return (
     <TouchableOpacity activeOpacity={1} style={{ marginBottom: 30 }}>
-      {localRestaurants.map((restaurant, index) => (
+      {props.restaurantData.map((restaurant, index) => (
         <View
           key={index}
           style={{
