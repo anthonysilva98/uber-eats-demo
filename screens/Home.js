@@ -14,7 +14,7 @@ const Home = () => {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
   const getRestaurantsFromYelp = () => {
     const yelpurl =
-      "https://api.yelp.com/v3/businesses/search?term=restaurants&location=SanDiego";
+      "https://api.yelp.com/v3/businesses/search?term=restaurants&location=Riverbank";
 
     const apiOptions = {
       headers: {
