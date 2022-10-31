@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import HeaderTabs from "../components/HeaderTabs";
 import SearchBar from "../components/SearchBar";
 import Catagories from "../components/Catagories";
+import BottomTabs from "../components/BottomTabs";
 import RestaurantItems, {
   localRestaurants,
 } from "../components/RestaurantItems";
+import { Divider } from "react-native-elements";
 
 const YELP_API_KEY =
   "iVpx0HD9AThkZbzsmLfSJV8f5t9XnnGPqrFBRXHAHG9YNLt5cAuygMfc42KbwsjOWItkFUoP9FQKM_2Mff6-JDHr3qQ8O7cxR04T7U3uRyge77uci1jBVeKheFVXY3Yx";
@@ -50,6 +52,8 @@ const Home = () => {
         <Catagories />
         <RestaurantItems restaurantData={restaurantData} />
       </ScrollView>
+      <Divider width={1} />
+      <BottomTabs />
     </SafeAreaView>
   );
 };
