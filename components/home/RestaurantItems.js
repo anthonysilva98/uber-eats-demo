@@ -83,7 +83,7 @@ const RestaurantInfo = ({ name, rating }) => {
     >
       <View>
         <Text style={{ fontSize: 15, fontWeight: "bold" }}>{name}</Text>
-        <Text style={{ color: "grey" }}>30-45 ` min</Text>
+        <Text style={{ color: "grey" }}>30-45 ● min</Text>
       </View>
       <View
         style={{
