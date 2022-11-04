@@ -1,17 +1,31 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 
-const image =
-  "https://popmenucloud.com/byzevpwi/a4805191-43af-4d57-b9c7-7e2099ce5370.jpg";
-const title = "Farmhouse Kitchen Tai Cuisine";
-const description = "Thai - Comfort Food $$ 4 Star (2915+)";
+const yelpRestaurantInfo = {
+  name: "Farmhouse Kithen Thai Cuisine",
+  image:
+    "https://popmenucloud.com/byzevpwi/a4805191-43af-4d57-b9c7-7e2099ce5370.jpg",
+  price: "$$",
+  reviews: "1500",
+  rating: 4.5,
+  catagories: [{ title: "Thai" }, { title: "Comfort Food" }],
+};
+
+const { name, image, price, reviews, rating, catagories } = yelpRestaurantInfo;
+
+const formattedCatagories = catagories.map((cat) => cat.title).join(" ● ");
+
+const description = `${formattedCatagories} ${
+  price ? " ● " + price : ""
+} ● ${rating} Stars ● ${reviews}  `;
+
 const About = () => {
   return (
     <View>
       {/* Restaurant Image */}
       <RestaurantImage image={image} />
       {/* Restaurant Title */}
-      <RestaurantTitleComponent title={title} />
+      <RestaurantTitleComponent name={name} />
       {/* Restaurant Description */}
       <RestaurantDescription description={description} />
     </View>
