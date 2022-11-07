@@ -66,7 +66,11 @@ const MenuItem = () => {
             {/* Food Image */}
             <FoodImage food={food} />
           </View>
-          <Divider width={1.5} />
+          <Divider
+            width={1.5}
+            orientation="vertical"
+            style={{ marginHorizontal: 20 }}
+          />
         </View>
       ))}
     </ScrollView>
