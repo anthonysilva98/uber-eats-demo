@@ -11,15 +11,16 @@ const yelpRestaurantInfo = {
   catagories: [{ title: "Thai" }, { title: "Comfort Food" }],
 };
 
-const { name, image, price, reviews, rating, catagories } = yelpRestaurantInfo;
+const About = (props) => {
+  //Destructure Information Coming in from Route
+  const { name, image, price, reviews, rating, catagories } =
+    props.route.params;
 
-const formattedCatagories = catagories.map((cat) => cat.title).join(" ● ");
-
-const description = `${formattedCatagories} ${
-  price ? " ● " + price : ""
-} ● ${rating} Stars ● ${reviews}  `;
-
-const About = () => {
+  const formattedCatagories = catagories.map((cat) => cat.title).join(" ● ");
+  //Formatted Concatenization of Destructed Data
+  const description = `${formattedCatagories} ${
+    price ? " ● " + price : ""
+  } ● ${rating} Stars ● ${reviews}  `;
   return (
     <View>
       {/* Restaurant Image */}
@@ -47,7 +48,6 @@ const RestaurantTitleComponent = (props) => {
       style={{
         fontSize: 29,
         fontWeight: "600",
-        marginTop: 10,
         marginHorizontal: 10,
       }}
     >
