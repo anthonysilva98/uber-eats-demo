@@ -51,7 +51,7 @@ const RestaurantTitleComponent = (props) => {
         marginHorizontal: 10,
       }}
     >
-      {props.title}
+      {props.name}
     </Text>
   );
 };
