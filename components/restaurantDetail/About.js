@@ -1,16 +1,6 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 
-const yelpRestaurantInfo = {
-  name: "Farmhouse Kithen Thai Cuisine",
-  image:
-    "https://popmenucloud.com/byzevpwi/a4805191-43af-4d57-b9c7-7e2099ce5370.jpg",
-  price: "$$",
-  reviews: "1500",
-  rating: 4.5,
-  catagories: [{ title: "Thai" }, { title: "Comfort Food" }],
-};
-
 const About = (props) => {
   //Destructure Information Coming in from Route
   const { name, image, price, reviews, rating, catagories } =
