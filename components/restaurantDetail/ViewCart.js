@@ -1,8 +1,10 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Modal } from "react-native";
 import React from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 const ViewCart = () => {
+  const [modalVisable, setmodalVisable] = useState(false);
   const items = useSelector((state) => state.cartReducer.selectedItems.items);
   //adds up total from price array to display them
   const total = items
@@ -14,8 +16,34 @@ const ViewCart = () => {
     currency: "USD",
   });
   console.log(totalUSD);
+
+  const checkoutModalContent = () => {
+    return (
+      <View
+        style={{
+          backgroundColor: "black",
+          padding: 10,
+          borderRadius: 30,
+          width: 150,
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity onPress={() => setModalVisible(false)}>
+          <Text style={{ color: "white" }}>Checkout</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
   return (
     <>
+      <Modal
+        animationType="slide"
+        visible={modalVisable}
+        transparent={true}
+        onRequestClose={() => setmodalVisable(false)}
+      >
+        {checkoutModalContent()}
+      </Modal>
       {total ? (
         <View
           style={{
