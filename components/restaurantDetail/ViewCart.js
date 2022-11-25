@@ -21,16 +21,25 @@ const ViewCart = () => {
     return (
       <View
         style={{
-          backgroundColor: "black",
-          padding: 10,
-          borderRadius: 30,
-          width: 150,
+          flex: 1,
+          justifyContent: "center",
           alignItems: "center",
+          marginTop: 30,
         }}
       >
-        <TouchableOpacity onPress={() => setModalVisible(false)}>
-          <Text style={{ color: "white" }}>Checkout</Text>
-        </TouchableOpacity>
+        <View
+          style={{
+            backgroundColor: "black",
+            padding: 10,
+            borderRadius: 30,
+            width: 150,
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity onPress={() => setmodalVisable(false)}>
+            <Text style={{ color: "white" }}>Checkout</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   };
@@ -74,6 +83,7 @@ const ViewCart = () => {
                 width: 300,
                 position: "relative",
               }}
+              onPress={() => setmodalVisable(true)}
             >
               <Text style={{ color: "white", fontSize: 20, marginRight: 30 }}>
                 View Cart{" "}
