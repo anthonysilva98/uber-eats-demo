@@ -3,7 +3,15 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import OrderItem from "./OrderItem";
-
+import { db } from "../../firebase";
+import {
+  addDoc,
+  setDoc,
+  getFirestore,
+  Firestore,
+  collection,
+  serverTimestamp,
+} from "firebase/firestore";
 const ViewCart = () => {
   const [modalVisable, setmodalVisable] = useState(false);
   const { items, restaurantName } = useSelector(
@@ -20,6 +28,16 @@ const ViewCart = () => {
   });
   console.log(totalUSD);
 
+  const addOrderToFirebase = () => {
+    const dbRef = collection(db, "orders");
+    const data = {
+      items: items,
+      restaurantName: restaurantName,
+      createdAt: serverTimestamp(),
+    };
+    addDoc(dbRef, data);
+    setmodalVisable(false);
+  };
   const checkoutModalContent = () => {
     return (
       <>
@@ -44,7 +62,9 @@ const ViewCart = () => {
                   width: 300,
                   position: "relative",
                 }}
-                onPress={() => setmodalVisable(false)}
+                onPress={() => {
+                  addOrderToFirebase();
+                }}
               >
                 <Text style={{ color: "white", fontSize: 20 }}>Checkout</Text>
                 <Text
