@@ -5,8 +5,10 @@ import { useSelector } from "react-redux";
 import OrderItem from "./OrderItem";
 import { db } from "../../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import LottieView from "lottie-react-native";
 const ViewCart = ({ navigation }) => {
   const [modalVisable, setmodalVisable] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { items, restaurantName } = useSelector(
     (state) => state.cartReducer.selectedItems
   );
@@ -22,15 +24,19 @@ const ViewCart = ({ navigation }) => {
   console.log(totalUSD);
 
   const addOrderToFirebase = () => {
+    setLoading(true);
     const dbRef = collection(db, "orders");
     const data = {
       items: items,
       restaurantName: restaurantName,
       createdAt: serverTimestamp(),
     };
-    addDoc(dbRef, data);
-    setmodalVisable(false);
-    navigation.navigate("OrderCompleted");
+    addDoc(dbRef, data).then(() => {
+      setTimeout(() => {
+        setLoading(false);
+        navigation.navigate("OrderCompleted");
+      }, 2000);
+    });
   };
   const checkoutModalContent = () => {
     return (
@@ -58,6 +64,7 @@ const ViewCart = ({ navigation }) => {
                 }}
                 onPress={() => {
                   addOrderToFirebase();
+                  setmodalVisable(false);
                 }}
               >
                 <Text style={{ color: "white", fontSize: 20 }}>Checkout</Text>
@@ -128,6 +135,31 @@ const ViewCart = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
+      ) : (
+        <></>
+      )}
+      {/* Loading for Animation */}
+      {loading ? (
+        <>
+          <View
+            style={{
+              backgroundColor: "black",
+              position: "absolute",
+              opacity: 0.6,
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+              width: "100%",
+            }}
+          >
+            <LottieView
+              style={{ height: 300 }}
+              source={require("../../assets/animations/scanner.json")}
+              autoPlay
+              speed={3}
+            />
+          </View>
+        </>
       ) : (
         <></>
       )}
