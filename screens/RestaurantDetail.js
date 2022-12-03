@@ -21,22 +21,21 @@ const foods = [
   },
   {
     title: "Soup",
-    description:
-      "Delicious Soup Delicious Soup Delicious Soup Delicious Soup Delicious Soup Delicious Soup ",
+    description: "Delicious Soup  ",
     price: "$17",
     image:
       "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
   },
   {
-    title: "Lasagna",
-    description: "Delicious Lasagna",
+    title: "Steak",
+    description: "Medium rare Steak",
     price: "$15",
     image:
       "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
   },
   {
-    title: "Pizza",
-    description: "Delic Pizza",
+    title: "Pasta",
+    description: "Delic Pasta",
     price: "$12",
     image:
       "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
@@ -44,6 +43,62 @@ const foods = [
   {
     title: "Soup",
     description: "Delicious Soup",
+    price: "$17",
+    image:
+      "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
+  },
+  {
+    title: "Veggies",
+    description: "Veggie Board served with Carrots, Peas, and Celary",
+    price: "$17",
+    image:
+      "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
+  },
+  {
+    title: "Lasagna",
+    description: "Delic Lasagna",
+    price: "$15",
+    image:
+      "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
+  },
+  {
+    title: "Pizza",
+    description: "Delicious Pizza",
+    price: "$12",
+    image:
+      "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
+  },
+  {
+    title: "Soup",
+    description: "Delicious Soup  ",
+    price: "$17",
+    image:
+      "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
+  },
+  {
+    title: "Steak",
+    description: "Medium rare Steak",
+    price: "$15",
+    image:
+      "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
+  },
+  {
+    title: "Pasta",
+    description: "Delic Pasta",
+    price: "$12",
+    image:
+      "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
+  },
+  {
+    title: "Soup",
+    description: "Delicious Soup",
+    price: "$17",
+    image:
+      "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
+  },
+  {
+    title: "Veggies",
+    description: "Veggie Board served with Carrots, Peas, and Celary",
     price: "$17",
     image:
       "http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg",
