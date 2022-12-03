@@ -4,15 +4,8 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import OrderItem from "./OrderItem";
 import { db } from "../../firebase";
-import {
-  addDoc,
-  setDoc,
-  getFirestore,
-  Firestore,
-  collection,
-  serverTimestamp,
-} from "firebase/firestore";
-const ViewCart = () => {
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+const ViewCart = ({ navigation }) => {
   const [modalVisable, setmodalVisable] = useState(false);
   const { items, restaurantName } = useSelector(
     (state) => state.cartReducer.selectedItems
@@ -37,6 +30,7 @@ const ViewCart = () => {
     };
     addDoc(dbRef, data);
     setmodalVisable(false);
+    navigation.navigate("OrderCompleted");
   };
   const checkoutModalContent = () => {
     return (
