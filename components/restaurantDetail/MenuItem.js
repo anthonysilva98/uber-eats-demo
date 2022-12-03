@@ -21,7 +21,7 @@ const MenuItem = ({ restaurantName, foods, hideCheckbox, marginLeft }) => {
   const isFoodInCart = (food, cartItems) =>
     Boolean(cartItems.find((item) => item.title === food.title));
   return (
-    <ScrollView showsVerticalScrollIndicator={false} pagingEnabled={false}>
+    <ScrollView showsVerticalScrollIndicator={false}>
       {foods.map((food, index) => (
         <View key={index}>
           <View style={styles.menuItemStyle}>
